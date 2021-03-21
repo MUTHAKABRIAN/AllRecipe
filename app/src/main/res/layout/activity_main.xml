@@ -17,10 +17,22 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/kavoon"
+        android:text="All Recipes"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:text="All Recipes"/>
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/RecipeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/findRecipeButton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter Recipe" />
 
     <Button
         android:id="@+id/findRecipeButton"
