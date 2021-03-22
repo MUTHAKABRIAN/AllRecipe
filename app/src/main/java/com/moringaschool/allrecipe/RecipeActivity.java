@@ -33,7 +33,7 @@ public class RecipeActivity extends AppCompatActivity {
 //        mListView =(ListView) findViewById(R.id.listView);
 
 
-        RecipeArrayAdapter adapter = new RecipeArrayAdapter(this, android.R.layout.simple_list_item_1, recipes, descriptions);
+        RecipeArrayAdapter adapter = new RecipeArrayAdapter(this, R.layout.custom_list, recipes, descriptions);
         mListView.setAdapter(adapter);
 
         Intent intent =getIntent();
