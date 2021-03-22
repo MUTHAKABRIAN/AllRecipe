@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryLight"
+        android:background="@color/colorAccent"
         android:textColor="@color/white"
         android:text="Find Recipe" />
 
