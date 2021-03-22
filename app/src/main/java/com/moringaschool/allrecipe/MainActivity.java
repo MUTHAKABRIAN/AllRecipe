@@ -14,14 +14,17 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
-    public static final String TAG =MainActivity.class.getSimpleName();
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
+    public static final String TAG = MainActivity.class.getSimpleName();
 //    private Button mFindRecipeButton;
 //    private EditText mRecipeEditText;
 
-    @BindView(R.id.findRecipeButton)Button mFindRecipeButton;
-    @BindView (R.id.RecipeEditText)EditText mRecipeEditText;
-    @BindView (R.id.AppNameTextView) TextView mAppNameTxtView;
+    @BindView(R.id.findRecipeButton)
+    Button mFindRecipeButton;
+    @BindView(R.id.RecipeEditText)
+    EditText mRecipeEditText;
+    @BindView(R.id.AppNameTextView)
+    TextView mAppNameTxtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +34,21 @@ public class MainActivity extends AppCompatActivity {
 
 //        mRecipeEditText=(EditText)findViewById(R.id.RecipeEditText);
 //        mFindRecipeButton =(Button)findViewById(R.id.findRecipeButton);
-        mFindRecipeButton.setOnClickListener(new View.OnClickListener(){
+        mFindRecipeButton.setOnClickListener(this);
+    }
 
-            @Override
-            public void onClick(View v){
-                String recipe =mRecipeEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this,RecipeActivity.class);
-                intent.putExtra("recipe",recipe);
+        @Override
+        public void onClick (View v){
+            if (v == mFindRecipeButton) {
+                String recipe = mRecipeEditText.getText().toString();
+                Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+                intent.putExtra("recipe", recipe);
 //                Log.d(TAG,recipe);
 
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this,recipe,Toast.LENGTH_LONG).show();
 
             }
-        });
+        }
     }
-}
+
