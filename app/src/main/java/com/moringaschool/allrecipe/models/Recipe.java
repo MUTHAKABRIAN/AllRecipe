@@ -1,5 +1,5 @@
 
-package allrecipe.moringaschool.allrecipe.models;
+package com.moringaschool.allrecipe.models;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

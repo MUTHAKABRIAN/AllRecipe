@@ -1,7 +1,8 @@
-package com.moringaschool.allrecipe;
+package com.moringaschool.allrecipe.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    private Button mFindRecipeButton;
 //    private EditText mRecipeEditText;
 
+
+    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.findRecipeButton)
     Button mFindRecipeButton;
     @BindView(R.id.RecipeEditText)
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onClick (View v){
             if (v == mFindRecipeButton) {
                 String recipe = mRecipeEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
+                Intent intent = new Intent(MainActivity.this, RecipeDetailActivity.class);
                 intent.putExtra("recipe", recipe);
 //                Log.d(TAG,recipe);
 
