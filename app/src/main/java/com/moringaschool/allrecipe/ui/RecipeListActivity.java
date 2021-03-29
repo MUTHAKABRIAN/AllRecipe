@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringaschool.allrecipe.R;
-import com.moringaschool.allrecipe.adapter.RecipeListAdapter;
+
 import com.moringaschool.allrecipe.models.Recipe;
 import com.moringaschool.allrecipe.models.RecipesResponse;
 import com.moringaschool.allrecipe.network.RecipeApi;
@@ -28,7 +28,7 @@ public class RecipeListActivity {
     private static final String TAG = RecipeListActivity.class.getSimpleName();
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    private RecipeListAdapter mAdapter;
+//    private RecipeListAdapter mAdapter;
     @BindView(R.id.errorTextView)
     TextView mErrorTextView;
     @BindView(R.id.progressBar)
@@ -52,9 +52,9 @@ public class RecipeListActivity {
 //
 //
 //            }
-//        });
-        Intent intent = getIntent();
-        String recipe = intent.getStringExtra("recipe");
+//            });
+        Intent intent =getIntent();
+        String recipe =intent.getStringExtra("recipe");
 
 
         RecipeApi client = RecipeClient.getClient();
@@ -66,19 +66,7 @@ public class RecipeListActivity {
             public void onResponse(Call<RecipesResponse> call, Response<RecipesResponse> response) {
                 hideProgressBar();
 
-                if (response.isSuccessful()) {
-                    recipes = response.body().get();
-                    mAdapter = new RecipeListAdapter(recipes, RecipeListActivity.this);
-                    mRecyclerView.setAdapter(mAdapter);
-                    RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(RecipeListActivity.this);
-                    mRecyclerView.setLayoutManager(layoutManager);
-                    mRecyclerView.setHasFixedSize(true);
 
-                    showRecipes();
-                } else {
-                    showUnsuccessfulMessage();
-                }
             }
 
             @Override
@@ -105,4 +93,4 @@ public class RecipeListActivity {
         mProgressBar.setVisibility(View.GONE);
     }
 }
-}
+
