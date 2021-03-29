@@ -7,7 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.moringaschool.allrecipe.R;
-import com.moringaschool.allrecipe.adapter.RecipePagerAdapter;
+//import com.moringaschool.allrecipe.adapter.RecipePagerAdapter;
 import com.moringaschool.allrecipe.models.Recipe;
 
 import org.parceler.Parcels;
@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 
 public class RecipeDetailActivity extends AppCompatActivity {
  @BindView(R.id.viewPager) ViewPager mViewPager;
-    private RecipePagerAdapter adapterViewPager;
+//    private RecipePagerAdapter adapterViewPager;
     List<Recipe> mRecipes;
 
     @Override
@@ -31,8 +31,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
         mRecipes = Parcels.unwrap(getIntent().getParcelableExtra("restaurants"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        adapterViewPager = new RecipePagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mRecipes);
-        mViewPager.setAdapter(adapterViewPager);
-        mViewPager.setCurrentItem(startingPosition);
+//        adapterViewPager = new RecipePagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mRecipes);
+//        mViewPager.setAdapter(adapterViewPager);
+//        mViewPager.setCurrentItem(startingPosition);
     }
 }

@@ -1,22 +1,20 @@
 package com.moringaschool.allrecipe.ui;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.moringaschool.allrecipe.R;
-
-import com.moringaschool.allrecipe.models.Recipe;
 import com.moringaschool.allrecipe.models.RecipesResponse;
 import com.moringaschool.allrecipe.network.RecipeApi;
 import com.moringaschool.allrecipe.network.RecipeClient;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,17 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RecipeListActivity {
-    private static final String TAG = RecipeListActivity.class.getSimpleName();
-    @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
-//    private RecipeListAdapter mAdapter;
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @BindView(R.id.progressBar)
-    ProgressBar mProgressBar;
-    public List<Recipe> recipes;
-
+public class RecipeListActivity extends AppCompatActivity {
+    //    private TextView mRecipeTextView;
+//    private ListView mListView;
+//    @BindView(R.id.recipeTextView) TextView  mRecipeTextView;
+//    @BindView(R.id.listView) ListView mListView;
+//
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,55 +35,38 @@ public class RecipeListActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
 
+//        mRecipeTextView =(TextView)findViewById((R.id.recipeTextView));
+//        mListView =(ListView) findViewById(R.id.listView);
 
 
-//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-//                String restaurant = ((TextView) view).getText().toString();
-//                Toast.makeText(RestaurantsActivity.this, restaurant, Toast.LENGTH_LONG).show();
-//
-//
-//            }
-//            });
+
+
         Intent intent =getIntent();
         String recipe =intent.getStringExtra("recipe");
-
-
-        RecipeApi client = RecipeClient.getClient();
-
-        Call<RecipesResponse> call = client.getRecipe(recipe, "048b63e1");
-
+//        mRecipeTextView.setText("Here are all the Recipes for: "+recipe);
+//
+//        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                String recipe = ((TextView)view).getText().toString();
+//                Toast.makeText(RecipeActivity.this, recipe, Toast.LENGTH_LONG).show();
+//            }
+//        });
+        RecipeApi  client = RecipeClient.getClient();
+        Call<RecipesResponse> call = client.getRecipe(recipe,"048b63e1","28c7682c4af597714b4790cbd28ee328");
         call.enqueue(new Callback<RecipesResponse>() {
             @Override
             public void onResponse(Call<RecipesResponse> call, Response<RecipesResponse> response) {
-                hideProgressBar();
-
 
             }
 
             @Override
             public void onFailure(Call<RecipesResponse> call, Throwable t) {
-                hideProgressBar();
-                showFailureMessage();
+
             }
-
         });
-    }
-    private void showFailureMessage(){
-        mErrorTextView.setText("Something went Wrong.please check your internet connection and try again later");
-        mErrorTextView.setVisibility(View.VISIBLE);
-    }
-    private void showUnsuccessfulMessage(){
-        mErrorTextView.setText("Something went wrong .please try again later");
-        mErrorTextView.setVisibility(View.VISIBLE);
-    }
 
-    private void showRestaurants() {
-        mRecyclerView.setVisibility(View.VISIBLE);
-    }
-    private void hideProgressBar(){
-        mProgressBar.setVisibility(View.GONE);
+
+
     }
 }
-
