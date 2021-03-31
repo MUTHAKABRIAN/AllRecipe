@@ -81,9 +81,12 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
         @Override
         public void onClick(View v) {
-            //used getAdapterPosition instead of layoutPosition
 
-
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, RecipeDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("newHits", Parcels.wrap(adapterHits));
+            mContext.startActivity(intent);
         }
     }
 
