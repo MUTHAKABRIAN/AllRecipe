@@ -38,6 +38,21 @@ public class RecipeDetailFragment extends Fragment {
     @BindView(R.id.fragmentNameTextView) TextView fragmentName;
     @BindView(R.id.ingredientsTextView) TextView ingredientViews;
     @BindView(R.id.labelTextView)TextView labelIngredient;
+    @BindView(R.id.ingredientsTextView2)TextView ingredientViews2;
+    @BindView (R.id.ingredientsTextView3)TextView ingredientView3;
+    @BindView (R.id.ingredientsTextView4)TextView ingredientView4;
+//    @BindView (R.id.ingredientsTextView5)TextView ingredientView5;
+//    @BindView (R.id.ingredientsTextView6)TextView ingredientView6;
+//    @BindView (R.id.ingredientsTextView7)TextView ingredientView7;
+//    @BindView (R.id.ingredientsTextView8)TextView ingredientView8;
+//    @BindView (R.id.ingredientsTextView9)TextView ingredientView9;
+
+
+
+
+
+
+
 
 
 
@@ -72,6 +87,14 @@ public class RecipeDetailFragment extends Fragment {
         Picasso.get().load(recipeInFragments.getRecipe().getImage()).into(hereImage);
         fragmentName.setText(recipeInFragments.getRecipe().getLabel());
         ingredientViews.setText(recipeInFragments.getRecipe().getIngredientLines().get(0));
+        ingredientViews2.setText(recipeInFragments.getRecipe().getIngredientLines().get(1));
+        ingredientView3.setText(recipeInFragments.getRecipe().getIngredientLines().get(2));
+        ingredientView4.setText(recipeInFragments.getRecipe().getIngredientLines().get(3));
+//        ingredientView5.setText(recipeInFragments.getRecipe().getIngredientLines().get(4));
+//        ingredientView6.setText(recipeInFragments.getRecipe().getIngredientLines().get(5));
+//        ingredientView7.setText(recipeInFragments.getRecipe().getIngredientLines().get(6));
+//        ingredientView8.setText(recipeInFragments.getRecipe().getIngredientLines().get(7));
+//        ingredientView9.setText(recipeInFragments.getRecipe().getIngredientLines().get(8));
 //        mYaingredients.setText(recipeInFragments.getRecipe().getIngredients().size());
 
         return view;
