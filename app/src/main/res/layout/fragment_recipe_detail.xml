@@ -102,17 +102,7 @@
                     android:textColor="@color/colorTextIcons"
                     android:textSize="15sp"
                     android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/ingredientsTextView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawablePadding="4dp"
-                    android:gravity="center_vertical"
-                    android:text="ingredients4"
-                    android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+
 
 
 
