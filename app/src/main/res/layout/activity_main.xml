@@ -57,13 +57,13 @@
         android:layout_below="@+id/cardView"
         app:cardBackgroundColor="#8BFFFFFf">
 
-    <ImageView
-        android:id="@+id/image2View"
-        android:layout_width="wrap_content"
-        android:layout_height="330dp"
-        android:scaleType="center"
-        android:layout_below="@+id/cardView"
-        app:srcCompat="@drawable/pic3" />
+        <ImageView
+            android:id="@+id/image2View"
+            android:layout_width="wrap_content"
+            android:layout_height="330dp"
+            android:scaleType="center"
+            android:layout_below="@+id/cardView"
+            app:srcCompat="@drawable/pic3" />
     </androidx.cardview.widget.CardView>
 
 
@@ -87,5 +87,6 @@
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
         android:text="Find Recipe" />
+
 
 </RelativeLayout>
