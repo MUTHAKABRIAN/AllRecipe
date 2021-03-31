@@ -4,6 +4,9 @@ package com.moringaschool.allrecipe.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Sub {
 
     @SerializedName("label")
@@ -12,9 +15,9 @@ public class Sub {
     @SerializedName("tag")
     @Expose
     private String tag;
-    @SerializedName("schemaOrgTag")
-    @Expose
-    private Object schemaOrgTag;
+//    @SerializedName("schemaOrgTag")
+//    @Expose
+//    private Object schemaOrgTag;
     @SerializedName("total")
     @Expose
     private Double total;
@@ -49,8 +52,7 @@ public class Sub {
         super();
         this.label = label;
         this.tag = tag;
-        this.schemaOrgTag = schemaOrgTag;
-        this.total = total;
+         this.total = total;
         this.hasRDI = hasRDI;
         this.daily = daily;
         this.unit = unit;
@@ -72,13 +74,13 @@ public class Sub {
         this.tag = tag;
     }
 
-    public Object getSchemaOrgTag() {
-        return schemaOrgTag;
-    }
-
-    public void setSchemaOrgTag(Object schemaOrgTag) {
-        this.schemaOrgTag = schemaOrgTag;
-    }
+//    public Object getSchemaOrgTag() {
+//        return schemaOrgTag;
+//    }
+//
+//    public void setSchemaOrgTag(Object schemaOrgTag) {
+//        this.schemaOrgTag = schemaOrgTag;
+//    }
 
     public Double getTotal() {
         return total;

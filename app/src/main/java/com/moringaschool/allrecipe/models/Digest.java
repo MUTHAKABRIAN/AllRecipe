@@ -5,6 +5,9 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Digest {
 
     @SerializedName("label")
@@ -13,9 +16,9 @@ public class Digest {
     @SerializedName("tag")
     @Expose
     private String tag;
-    @SerializedName("schemaOrgTag")
-    @Expose
-    private Object schemaOrgTag;
+//    @SerializedName("schemaOrgTag")
+//    @Expose
+//    private Object schemaOrgTag;
     @SerializedName("total")
     @Expose
     private Double total;
@@ -54,7 +57,7 @@ public class Digest {
         super();
         this.label = label;
         this.tag = tag;
-        this.schemaOrgTag = schemaOrgTag;
+//        this.schemaOrgTag = schemaOrgTag;
         this.total = total;
         this.hasRDI = hasRDI;
         this.daily = daily;
@@ -78,13 +81,13 @@ public class Digest {
         this.tag = tag;
     }
 
-    public Object getSchemaOrgTag() {
-        return schemaOrgTag;
-    }
-
-    public void setSchemaOrgTag(Object schemaOrgTag) {
-        this.schemaOrgTag = schemaOrgTag;
-    }
+//    public Object getSchemaOrgTag() {
+//        return schemaOrgTag;
+//    }
+//
+//    public void setSchemaOrgTag(Object schemaOrgTag) {
+//        this.schemaOrgTag = schemaOrgTag;
+//    }
 
     public Double getTotal() {
         return total;

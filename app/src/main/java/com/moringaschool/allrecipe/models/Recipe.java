@@ -5,6 +5,9 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Recipe {
 
     @SerializedName("uri")
@@ -28,9 +31,9 @@ public class Recipe {
     @SerializedName("yield")
     @Expose
     private Double yield;
-    @SerializedName("dietLabels")
-    @Expose
-    private List<Object> dietLabels = null;
+//    @SerializedName("dietLabels")
+//    @Expose
+//    private List<Object> dietLabels = null;
     @SerializedName("healthLabels")
     @Expose
     private List<String> healthLabels = null;
@@ -111,7 +114,7 @@ public class Recipe {
         this.url = url;
         this.shareAs = shareAs;
         this.yield = yield;
-        this.dietLabels = dietLabels;
+//        this.dietLabels = dietLabels;
         this.healthLabels = healthLabels;
         this.cautions = cautions;
         this.ingredientLines = ingredientLines;
@@ -183,13 +186,13 @@ public class Recipe {
         this.yield = yield;
     }
 
-    public List<Object> getDietLabels() {
-        return dietLabels;
-    }
+//    public List<Object> getDietLabels() {
+//        return dietLabels;
+//    }
 
-    public void setDietLabels(List<Object> dietLabels) {
-        this.dietLabels = dietLabels;
-    }
+//    public void setDietLabels(List<Object> dietLabels) {
+//        this.dietLabels = dietLabels;
+//    }
 
     public List<String> getHealthLabels() {
         return healthLabels;
