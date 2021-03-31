@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.moringaschool.allrecipe.Constants;
 import com.moringaschool.allrecipe.R;
 import com.moringaschool.allrecipe.adapter.RecipeListAdapter;
 import com.moringaschool.allrecipe.models.Hit;
@@ -32,6 +35,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipeListActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private String mRecentSearch;
 
     private static final String TAG = "in recipeListActivity";
     //    private TextView mRecipeTextView;
@@ -49,14 +54,19 @@ public class RecipeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
 
+        Intent intent =getIntent();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
+        //Log.d("Shared Pref Recipe", mRecentSearch);
+
+
 //        mRecipeTextView =(TextView)findViewById((R.id.recipeTextView));
 //        mListView =(ListView) findViewById(R.id.listView);
 
 
 
+        String recipe =mRecentSearch;
 
-        Intent intent =getIntent();
-        String recipe =intent.getStringExtra("recipe");
 //        mRecipeTextView.setText("Here are all the Recipes for: "+recipe);
 //
 //        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
