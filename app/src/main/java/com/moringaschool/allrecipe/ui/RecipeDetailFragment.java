@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.allrecipe.Constants;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -28,12 +33,12 @@ import butterknife.ButterKnife;
  * create an instance of this fragment.
  *
  */
-public class RecipeDetailFragment extends Fragment {
+public class RecipeDetailFragment extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private Hit recipeInFragments;
-
+     @BindView (R.id.saveRecipeButton) Button mSaveRecipeButton;
     @BindView(R.id.fragmentImageView) ImageView  hereImage;
     @BindView(R.id.fragmentNameTextView) TextView fragmentName;
     @BindView(R.id.ingredientsTextView) TextView ingredientViews;
@@ -96,8 +101,18 @@ public class RecipeDetailFragment extends Fragment {
 //        ingredientView8.setText(recipeInFragments.getRecipe().getIngredientLines().get(7));
 //        ingredientView9.setText(recipeInFragments.getRecipe().getIngredientLines().get(8));
 //        mYaingredients.setText(recipeInFragments.getRecipe().getIngredients().size());
-
+ mSaveRecipeButton.setOnClickListener(this);
         return view;
 
+    }
+    @Override
+    public void onClick(View v){
+        if (v == mSaveRecipeButton){
+            DatabaseReference recipeRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_RECIPES);
+            recipeRef.push().setValue(recipeInFragments);
+            Toast.makeText(getContext(),"Saved",Toast.LENGTH_SHORT).show();
+        }
     }
 }
