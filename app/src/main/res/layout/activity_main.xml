@@ -25,11 +25,23 @@
         android:textStyle="bold" />
 
 
+    <EditText
+        android:id="@+id/RecipeEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AppNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorTextIcons"
+        android:hint="Search Recipe"
+        android:drawableLeft="@drawable/ic_search_black_18dp"
+        android:padding="5dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:layout_below="@+id/AppNameTextView"
+        android:layout_below="@id/RecipeEditText"
         app:cardBackgroundColor="#8BFFFFFf">
 
         <TextView
@@ -62,21 +74,9 @@
             android:layout_width="wrap_content"
             android:layout_height="330dp"
             android:scaleType="center"
-            android:layout_below="@+id/cardView"
             app:srcCompat="@drawable/pic3" />
     </androidx.cardview.widget.CardView>
 
-
-    <EditText
-        android:id="@+id/RecipeEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_marginBottom="10dp"
-        android:layout_above="@id/findRecipeButton"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorTextIcons"
-        android:hint="Enter your Recipe" />
 
     <Button
         android:id="@+id/findRecipeButton"

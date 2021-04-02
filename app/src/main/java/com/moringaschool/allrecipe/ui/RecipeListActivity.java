@@ -53,7 +53,6 @@ public class RecipeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
-
         Intent intent =getIntent();
 //        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 //        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
