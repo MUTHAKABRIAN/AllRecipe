@@ -35,8 +35,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipeListActivity extends AppCompatActivity {
-    private SharedPreferences mSharedPreferences;
-    private String mRecentSearch;
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentSearch;
 
     private static final String TAG = "in recipeListActivity";
     //    private TextView mRecipeTextView;
@@ -55,8 +55,8 @@ public class RecipeListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent =getIntent();
-        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
         //Log.d("Shared Pref Recipe", mRecentSearch);
 
 
@@ -65,7 +65,8 @@ public class RecipeListActivity extends AppCompatActivity {
 
 
 
-        String recipe =mRecentSearch;
+//        String recipe =mRecentSearch;
+        String recipe =intent.getStringExtra("recipe");
 
 //        mRecipeTextView.setText("Here are all the Recipes for: "+recipe);
 //
