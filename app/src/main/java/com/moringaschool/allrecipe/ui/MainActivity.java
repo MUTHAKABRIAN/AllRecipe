@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText mRecipeEditText;
     @BindView(R.id.AppNameTextView)
     TextView mAppNameTxtView;
+    @BindView(R.id.savedRecipesButton)Button mSavedRecipesButton;
 
 private ValueEventListener mSearchedRecipeReferenceListener;
 
@@ -57,7 +58,10 @@ private ValueEventListener mSearchedRecipeReferenceListener;
                 for (DataSnapshot recipeSnapshot: dataSnapshot.getChildren()){
                     String recipe =recipeSnapshot.getValue().toString();
                     Log.d("recipe updated ","recipe"+recipe);
+
+
                 }
+
 
             }
 
@@ -80,6 +84,8 @@ private ValueEventListener mSearchedRecipeReferenceListener;
 //        mRecipeEditText=(EditText)findViewById(R.id.RecipeEditText);
 //        mFindRecipeButton =(Button)findViewById(R.id.findRecipeButton);
         mFindRecipeButton.setOnClickListener(this);
+        mSavedRecipesButton.setOnClickListener(this);
+
     }
 
         @Override
@@ -99,6 +105,10 @@ private ValueEventListener mSearchedRecipeReferenceListener;
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this,recipe,Toast.LENGTH_LONG).show();
 
+            }
+            if (v == mSavedRecipesButton){
+                Intent intent = new Intent (MainActivity.this,SavedRecipeListActivity.class);
+                startActivity(intent);
             }
         }
 
