@@ -59,7 +59,7 @@ public class RecipeListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
-        Intent intent =getIntent();
+        Intent intent = getIntent();
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
         //Log.d("Shared Pref Recipe", mRecentSearch);
@@ -69,9 +69,8 @@ public class RecipeListActivity extends AppCompatActivity {
 //        mListView =(ListView) findViewById(R.id.listView);
 
 
-
 //        String recipe =mRecentSearch;
-        String recipe =intent.getStringExtra("recipe");
+        String recipe = intent.getStringExtra("recipe");
 
 //        mRecipeTextView.setText("Here are all the Recipes for: "+recipe);
 //
@@ -82,40 +81,10 @@ public class RecipeListActivity extends AppCompatActivity {
 //                Toast.makeText(RecipeActivity.this, recipe, Toast.LENGTH_LONG).show();
 //            }
 //        });
-        RecipeApi  client = RecipeClient.getClient();
-        Call<RecipesResponse> call = client.getRecipe(recipe,"048b63e1","28c7682c4af597714b4790cbd28ee328");
-        call.enqueue(new Callback<RecipesResponse>() {
-            @Override
-            public void onResponse(Call<RecipesResponse> call, Response<RecipesResponse> response) {
-                hideProgressBar();
-                if(response.isSuccessful()){
-                    recipeDetails = response.body().getHits();
-                    mRecipeListAdapter = new RecipeListAdapter(recipeDetails, RecipeListActivity.this);
-                    mRecyclerview.setAdapter(mRecipeListAdapter);
-                    RecyclerView.LayoutManager layoutManager =
-                            new LinearLayoutManager(RecipeListActivity.this);
-                    mRecyclerview.setLayoutManager(layoutManager);
-                    mRecyclerview.setHasFixedSize(true);
-                    Log.d(TAG, "onResponse: "+ recipeDetails);
-                    showRecipes();
-                }else{
-                    showUnsuccessfulMessage();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<RecipesResponse> call, Throwable t) {
-                hideProgressBar();
-                showFailureMessage();
-                Log.e(TAG, "onFailure: failing terribly", t );
-            }
-        });
-
-
-
+        if (mRecentSearch != null) {
+            fetchRecipes(mRecentSearch);
+        }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater =getMenuInflater();
@@ -127,17 +96,33 @@ public class RecipeListActivity extends AppCompatActivity {
         MenuItem menuItem =menu.findItem(R.id.action_search);
         SearchView searchView =(SearchView) menuItem.getActionView();
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+
+            @Override
+            public boolean onQueryTextSubmit(String recipe) {
+                addToSharedPreferences(recipe);
+                fetchRecipes(recipe);
+                return false;
+            }
+
+
+            @Override
+            public boolean onQueryTextChange(String recipe) {
+                return false;
+            }
+        });
+
         return true;
     }
 
-    @Override
+
+
+            @Override
     public boolean onOptionsItemSelected( MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
 
-    private void addToSharedPreferences(String recipe){
-        mEditor.putString(Constants.PREFERENCES_RECIPE_KEY,recipe).apply();
-    }
+
 
     private void showFailureMessage(){
         mErrorTextView.setText("Something went Wrong.please check your internet connection and try again later");
@@ -154,4 +139,40 @@ public class RecipeListActivity extends AppCompatActivity {
     private void hideProgressBar(){
         mProgressBar.setVisibility(View.GONE);
     }
+        private void addToSharedPreferences(String recipe){
+            mEditor.putString(Constants.PREFERENCES_RECIPE_KEY,recipe).apply();
+        }
+
+private void fetchRecipes(String recipe){
+    RecipeApi client = RecipeClient.getClient();
+    Call<RecipesResponse> call = client.getRecipe(recipe, "048b63e1", "28c7682c4af597714b4790cbd28ee328");
+    call.enqueue(new Callback<RecipesResponse>() {
+        @Override
+        public void onResponse(Call<RecipesResponse> call, Response<RecipesResponse> response) {
+            hideProgressBar();
+            if (response.isSuccessful()) {
+                recipeDetails = response.body().getHits();
+                mRecipeListAdapter = new RecipeListAdapter(recipeDetails, RecipeListActivity.this);
+                mRecyclerview.setAdapter(mRecipeListAdapter);
+                RecyclerView.LayoutManager layoutManager =
+                        new LinearLayoutManager(RecipeListActivity.this);
+                mRecyclerview.setLayoutManager(layoutManager);
+                mRecyclerview.setHasFixedSize(true);
+                Log.d(TAG, "onResponse: " + recipeDetails);
+                showRecipes();
+            } else {
+                showUnsuccessfulMessage();
+            }
+
+        }
+        @Override
+        public void onFailure(Call<RecipesResponse> call, Throwable t) {
+            hideProgressBar();
+            showFailureMessage();
+            Log.e(TAG, "onFailure: failing terribly", t);
+        }
+    });
+}
+
+
 }
