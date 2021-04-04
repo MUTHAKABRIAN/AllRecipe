@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.findRecipeButton)
     Button mFindRecipeButton;
-    @BindView(R.id.RecipeEditText)
-    EditText mRecipeEditText;
+
     @BindView(R.id.AppNameTextView)
     TextView mAppNameTxtView;
     @BindView(R.id.savedRecipesButton)Button mSavedRecipesButton;
@@ -91,16 +90,16 @@ private ValueEventListener mSearchedRecipeReferenceListener;
         @Override
         public void onClick (View v){
             if (v == mFindRecipeButton) {
-                String recipe = mRecipeEditText.getText().toString();
-                saveRecipeToFirebase(recipe);
+//                String recipe = mRecipeEditText.getText().toString();
+//                saveRecipeToFirebase(recipe);
 
 //                if (!(recipe).equals("") ){
 //                    addToSharedPreferences(recipe);
 //                }
 
                 Intent intent = new Intent(MainActivity.this, RecipeListActivity.class);
-                intent.putExtra("recipe", recipe);
-//                Log.d(TAG,recipe);
+//                intent.putExtra("recipe", recipe);
+////                Log.d(TAG,recipe);
 
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this,recipe,Toast.LENGTH_LONG).show();
