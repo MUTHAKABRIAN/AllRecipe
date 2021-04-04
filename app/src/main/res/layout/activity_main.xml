@@ -88,7 +88,7 @@
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/savedRecipesButton"
 
