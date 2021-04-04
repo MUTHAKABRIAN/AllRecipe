@@ -1,5 +1,6 @@
 package com.moringaschool.allrecipe.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,11 +10,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,8 +40,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipeListActivity extends AppCompatActivity {
-//    private SharedPreferences mSharedPreferences;
-//    private String mRecentSearch;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentSearch;
 
     private static final String TAG = "in recipeListActivity";
     //    private TextView mRecipeTextView;
@@ -54,8 +60,8 @@ public class RecipeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
         ButterKnife.bind(this);
         Intent intent =getIntent();
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_RECIPE_KEY, null);
         //Log.d("Shared Pref Recipe", mRecentSearch);
 
 
@@ -109,6 +115,30 @@ public class RecipeListActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater =getMenuInflater();
+        inflater.inflate(R.menu.menu_search,menu);
+        ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        MenuItem menuItem =menu.findItem(R.id.action_search);
+        SearchView searchView =(SearchView) menuItem.getActionView();
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void addToSharedPreferences(String recipe){
+        mEditor.putString(Constants.PREFERENCES_RECIPE_KEY,recipe).apply();
+    }
+
     private void showFailureMessage(){
         mErrorTextView.setText("Something went Wrong.please check your internet connection and try again later");
         mErrorTextView.setVisibility(View.VISIBLE);
