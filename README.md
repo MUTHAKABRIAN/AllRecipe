@@ -24,7 +24,7 @@ Afri-Recipe
   
   
   ##Demo
-  ![Image](drawable/demo1.jpg)
+  ![Image](app/demo1.jpg)
   ![Image](drawable/demo2.jpg)
   
   ##ScreenShots
