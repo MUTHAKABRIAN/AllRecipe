@@ -1,5 +1,6 @@
 package com.moringaschool.allrecipe.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.moringaschool.allrecipe.R;
 
 import butterknife.BindView;
@@ -26,9 +28,24 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     @BindView(R.id.loginTextView)TextView mLoginTextView;
 
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
 
 public static final String TAG =CreateAccountActivity.class.getSimpleName();
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +57,7 @@ public static final String TAG =CreateAccountActivity.class.getSimpleName();
         mCreateUserButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
+        createAuthStateListener();
 
 
 
@@ -59,6 +77,22 @@ public static final String TAG =CreateAccountActivity.class.getSimpleName();
                        Toast.makeText(CreateAccountActivity.this,"Authentication failed",Toast.LENGTH_SHORT).show();
                    }
                 });
+    }
+    private void createAuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+        };
     }
 
     @Override
