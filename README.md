@@ -21,9 +21,11 @@ Afri-Recipe
   - JUnit 4.12
   - Gradle
   -Firebase
+  
+  
   ##Demo
-  ![demo](drawable/demo1.jpg)
-  ![demo](drawable/demo2.jpg)
+  ![Image](drawable/demo1.jpg)
+  ![Image](drawable/demo2.jpg)
   
   ##ScreenShots
   ![screenShoot](drawable/screenshot1.jpg)
