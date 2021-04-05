@@ -19,6 +19,8 @@ public class Hit {
     @Expose
     private Boolean bought;
 
+    private String pushId;
+
     /**
      * No args constructor for use in serialization
      * 
@@ -60,7 +62,14 @@ public class Hit {
     }
 
     public void setBought(Boolean bought) {
+
         this.bought = bought;
+    }
+    public String getPushId(){
+        return pushId;
+    }
+    public void setPushId(String pushId){
+        this.pushId =pushId;
     }
 
 }
