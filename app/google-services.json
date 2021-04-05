@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969725447161",
+    "project_id": "allrecipe-4c4fd",
+    "storage_bucket": "allrecipe-4c4fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969725447161:android:71443376f676c62ebc0b28",
+        "android_client_info": {
+          "package_name": "com.moringaschool.allrecipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969725447161-sceo9h7n0dnm9ia66iurvq2238edveef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8FjpXmn6ihAqXDxKDsAG2VRX384TiuG4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969725447161-sceo9h7n0dnm9ia66iurvq2238edveef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
