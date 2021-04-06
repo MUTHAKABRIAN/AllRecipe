@@ -20,7 +20,8 @@ Afri-Recipe
   - Java Language
   - JUnit 4.12
   - Gradle
-  -Firebase
+  - Firebase
+  - Picasso
   
   
   ## ScreenShots
