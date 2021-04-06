@@ -24,8 +24,8 @@ Afri-Recipe
   
   
   ##Demo
-  ![Image](<img src="app/demo.jpg" height="300px" width="150px">)
-  ![Image](<img src="app/demo.jpg" height="300px" width="150px">)
+  ![Image](<img src="app/demo.jpg" height="400px" width="200px">)
+  ![Image](<img src="app/demo.jpg" height="400px" width="200px">)
   
   ##ScreenShots
   ![screenShoot](drawable/screenshot1.jpg)
