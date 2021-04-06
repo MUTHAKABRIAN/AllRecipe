@@ -11,12 +11,8 @@ Afri-Recipe
   
 
   ## Feauture MVP
-  - Linking Activity
-
-
-
-  ## Kwown Bugs
-  - The api gives only one random List at a time.
+  - Linking Activity,Fragment
+  
 
 
   ## Technologies Used.
@@ -24,13 +20,25 @@ Afri-Recipe
   - Java Language
   - JUnit 4.12
   - Gradle
+  -Firebase
+  
+  
+  ## ScreenShots
+  ![Screenshot from 2021-04-06 12-28-54](https://user-images.githubusercontent.com/32572544/113691776-7af4dc00-96d5-11eb-8ad7-b04caad6c0dd.png)
+
+  ![Screenshot from 2021-04-06 12-29-12](https://user-images.githubusercontent.com/32572544/113690268-e473eb00-96d3-11eb-8c2b-88273e92c37d.png)
+  
+  ![Screenshot from 2021-04-06 12-24-09](https://user-images.githubusercontent.com/32572544/113689439-091b9300-96d3-11eb-83c8-4b29d30dc1db.png)
+
+ 
+  
 
   ## Installation
   - Clone this repository and import into Android studio.
   - git clone here = https://github.com/MUTHAKABRIAN/AllRecipe
   - Enable gradle to import all the dependencies automatically
   - Make sure you have the technologies above
-  - Make sure you have MealDb Api for Random Meal
+  - Make sure you have Edamam Api for Recipes
 
   ## Maintainers
   - This project is maintained by Brian Muthaka.
