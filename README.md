@@ -28,7 +28,8 @@ Afri-Recipe
   ![Image](<img src="app/demo.jpg" height="400px" width="200px">)
   
   ##ScreenShots
-  ![screenShoot](drawable/screenshot1.jpg)
+  ![Screenshot from 2021-04-06 12-24-09](https://user-images.githubusercontent.com/32572544/113689439-091b9300-96d3-11eb-83c8-4b29d30dc1db.png)
+
   ![screenShoot](drawable/screenshot2.jpg)
   
 
