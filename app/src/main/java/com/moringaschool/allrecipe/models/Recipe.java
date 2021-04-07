@@ -42,7 +42,7 @@ public class Recipe {
     private List<String> cautions = null;
     @SerializedName("ingredientLines")
     @Expose
-    private List<String> ingredientLines = null;
+    private List<String> ingredientLines;
     @SerializedName("ingredients")
     @Expose
     private List<Ingredient> ingredients = null;
@@ -211,6 +211,7 @@ public class Recipe {
     }
 
     public List<String> getIngredientLines() {
+
         return ingredientLines;
     }
 

@@ -95,7 +95,7 @@ public class RecipeDetailFragment extends Fragment implements View.OnClickListen
         fragmentName.setText(recipeInFragments.getRecipe().getLabel());
         ingredientViews.setText(recipeInFragments.getRecipe().getIngredientLines().get(0));
         ingredientViews2.setText(recipeInFragments.getRecipe().getIngredientLines().get(1));
-        ingredientView3.setText(recipeInFragments.getRecipe().getIngredientLines().get(2));
+        //ingredientView3.setText(recipeInFragments.getRecipe().getIngredientLines().get(2));
 //        ingredientView4.setText(recipeInFragments.getRecipe().getIngredientLines().get(3));
 //        ingredientView5.setText(recipeInFragments.getRecipe().getIngredientLines().get(4));
 //        ingredientView6.setText(recipeInFragments.getRecipe().getIngredientLines().get(5));

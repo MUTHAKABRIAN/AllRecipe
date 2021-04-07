@@ -40,22 +40,27 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         android:layout_below="@id/AppNameTextView"
+        android:layout_marginLeft="35dp"
+
+        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="#8BFFFFFf">
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
-            android:layout_height="209dp"
-            android:paddingTop="35dp"
-            android:padding="20dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+
+            android:lineSpacingExtra="6sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif"
             android:text="Afri-Recipes is an online Application. \n Aids its user to search for recipes.\n It displays the source of the recipe.\n You can also find ingredient\n to your favourite recipes.If you don’t try any other online recipe organizer \n, you should at least try this one \n Aids its user to search for recipes.\n It displays the source of the recipe."
             android:textAlignment="center"
@@ -67,17 +72,27 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+
+
         android:layout_below="@+id/cardView"
-        app:cardBackgroundColor="#8BFFFFFf">
+        app:cardBackgroundColor="#8BFFFFFf"
+        app:cardCornerRadius="20sp">
 
         <ImageView
             android:id="@+id/image2View"
-            android:layout_width="wrap_content"
-            android:layout_height="330dp"
-            android:scaleType="center"
-            app:srcCompat="@drawable/pic3" />
+            android:layout_width="350dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+
+
+            app:srcCompat="@drawable/food" />
+
     </androidx.cardview.widget.CardView>
 
 
@@ -86,25 +101,32 @@
         android:layout_height="wrap_content"
         android:text="Find Recipe"
         android:id="@+id/findRecipeButton"
-        android:background="@color/purple_200"
+        android:background="@drawable/round_corners"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
-        android:textSize="30sp"
+        android:textSize="15sp"
+        android:layout_marginLeft="20dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/savedRecipesButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
 
         android:layout_marginBottom="10dp" />
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="My Saved Recipe"
         android:id="@+id/savedRecipesButton"
-        android:background="@color/purple_200"
+        android:background="@drawable/round_corners"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
+
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="13dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>
