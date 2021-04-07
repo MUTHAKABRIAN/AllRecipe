@@ -19,8 +19,9 @@
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@drawable/round_text_view"
             android:hint="Email"
+
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
@@ -33,7 +34,7 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="@drawable/round_text_view"
             android:hint="Password"
             android:inputType="textPassword"
             android:nextFocusDown="@+id/passwordEditText"
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Log in"
-            android:background="@color/purple_200"
+            android:background="@drawable/round_corners"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
 
@@ -59,6 +60,7 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/colorTextIcons"
             android:textStyle="bold"
+
             android:textSize="18sp"
             android:text="Don't have an account? Sign up here!"
             android:id="@+id/registerTextView"
