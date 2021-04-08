@@ -22,7 +22,7 @@
         android:layout_alignLeft ="@+id/recipeImageView"
         android:layout_alignBottom="@+id/recipeImageView"
         android:layout_gravity="bottom|left"
-        android:src="@drawable/ic_search_white_18dp"/>
+        android:src="@drawable/ic_reorder_white_18dp"/>
     </RelativeLayout>
 
     <LinearLayout
