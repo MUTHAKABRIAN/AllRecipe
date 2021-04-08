@@ -41,12 +41,12 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
     public void bindRecipe(Hit recipe){
         ImageView mRecipeImageView = (ImageView) mView.findViewById((R.id.recipeImageView));
         TextView mNameTextView = (TextView) mView.findViewById(R.id.recipeNameTextView);
-        TextView briansCuisineType = (TextView) mView.findViewById(R.id.cuisineTypeTextView);
+        TextView brianSourceText = (TextView) mView.findViewById(R.id.sourceTextView);
         Picasso.get().load(recipe.getRecipe().getImage()).into(mRecipeImageView);
         mNameTextView.setText(recipe.getRecipe().getLabel());
 //            Hit newCalories;
 //            newCalories.getRecipe().getCalories().
-        briansCuisineType.setText("Source: "+recipe.getRecipe().getSource());
+        brianSourceText.setText("Source: "+recipe.getRecipe().getSource());
 
 
 
