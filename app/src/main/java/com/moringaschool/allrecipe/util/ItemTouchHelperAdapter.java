@@ -1,6 +1,6 @@
 package com.moringaschool.allrecipe.util;
 
-public interface ItemTouchHelper {
+public interface ItemTouchHelperAdapter {
     boolean onItemMove(int fromPosition,int toPosition);
     void onItemDismiss(int position);
 }

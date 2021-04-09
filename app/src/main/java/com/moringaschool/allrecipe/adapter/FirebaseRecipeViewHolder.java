@@ -2,6 +2,7 @@ package com.moringaschool.allrecipe.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
 
     View mView;
     Context mContext;
+    public ImageView mRecipeImageView;
 
     public FirebaseRecipeViewHolder(View itemView) {
         super(itemView);
@@ -39,7 +41,7 @@ public class FirebaseRecipeViewHolder extends RecyclerView.ViewHolder implements
     }
 
     public void bindRecipe(Hit recipe){
-        ImageView mRecipeImageView = (ImageView) mView.findViewById((R.id.recipeImageView));
+        ImageView mRecipeImageView = (ImageView) mView.findViewById(R.id.recipeImageView);
         TextView mNameTextView = (TextView) mView.findViewById(R.id.recipeNameTextView);
         TextView brianSourceText = (TextView) mView.findViewById(R.id.sourceTextView);
         Picasso.get().load(recipe.getRecipe().getImage()).into(mRecipeImageView);

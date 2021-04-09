@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-    
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    android:layout_height="350dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+
+        android:layout_width="350dp"
+        android:layout_height="307dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_corners"
+        android:layout_marginLeft="35dp">
 
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="100dp"
+            android:layout_width="350dp"
+            android:layout_height="230dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+
             android:id="@+id/recipeImageView"
             android:src="@drawable/pic2"
             android:scaleType="centerCrop"/>
 
-    <ImageView
-        android:id="@+id/dragIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignLeft ="@+id/recipeImageView"
-        android:layout_alignBottom="@+id/recipeImageView"
-        android:layout_gravity="bottom|left"
-        android:src="@drawable/ic_reorder_white_18dp"/>
-    </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:background="#ffffff"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/recipeImageView"
+            android:layout_alignBottom="@id/recipeImageView"
+            android:layout_marginBottom="200dp"
+            android:src="@drawable/ic_reorder_white_18dp" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/recipeNameTextView"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:text="Recipe Name"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Source Text"
-            android:id="@+id/sourceTextView"
-            android:layout_below="@+id/recipeNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_marginTop="230dp"
+            android:background="#ffffff"
+            android:padding="10dp"
+            android:orientation="vertical">
 
 
-        </RelativeLayout>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/recipeNameTextView"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:text="Recipe Name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="0dp"/>
+
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Source"
+                android:textColor="@color/black"
+                android:id="@+id/sourceTextView"
+                android:textStyle="italic"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
 </LinearLayout>
