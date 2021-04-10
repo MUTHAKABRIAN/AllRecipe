@@ -28,25 +28,22 @@ public class FirebaseRecipeListAdapter extends FirebaseRecyclerAdapter<Hit,Fireb
         this.mOnStartDragListener = mOnStartDragListener;
         this.mContext = context;
     }
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseRecipeViewHolder, int position, @NonNull Hit recipe) {
         firebaseRecipeViewHolder.bindRecipe(recipe);
+        firebaseRecipeViewHolder.mRecipeImageView.setOnTouchListener(new View.OnTouchListener(){
 
-        firebaseRecipeViewHolder.mRecipeImageView.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public boolean onTouch(View v , MotionEvent event) {
                 if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
                     mOnStartDragListener.onStartDrag(firebaseRecipeViewHolder);
+
                 }
                 return false;
             }
         });
     }
 
-
-
-    @NonNull
     @Override
     public FirebaseRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_list_item_drag,parent,false);
