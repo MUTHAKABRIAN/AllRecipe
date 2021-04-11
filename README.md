@@ -27,7 +27,7 @@ Afri-Recipe
   ## ScreenShots
   ![Screenshot from 2021-04-06 12-28-54](https://user-images.githubusercontent.com/32572544/113691776-7af4dc00-96d5-11eb-8ad7-b04caad6c0dd.png)
 
-  ![Screenshot from 2021-04-06 12-29-12](https://user-images.githubusercontent.com/32572544/113690268-e473eb00-96d3-11eb-8c2b-88273e92c37d.png)
+  ![Screenshot from 2021-04-12 00-54-29](https://user-images.githubusercontent.com/32572544/114322738-8196af80-9b2a-11eb-89e3-32dc63bd1c64.png)
   
   ![Screenshot from 2021-04-06 12-24-09](https://user-images.githubusercontent.com/32572544/113689439-091b9300-96d3-11eb-83c8-4b29d30dc1db.png)
 
