@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.LoginActivity"
-    android:background="@drawable/acc">
+    android:background="@drawable/pic4">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="310dp"
         android:padding="30dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -18,7 +18,7 @@
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/round_text_view"
             android:hint="Email"
 
@@ -33,7 +33,7 @@
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/round_text_view"
             android:hint="Password"
             android:inputType="textPassword"
