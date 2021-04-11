@@ -31,17 +31,17 @@ public class FirebaseRecipeListAdapter extends FirebaseRecyclerAdapter<Hit,Fireb
     @Override
     protected void onBindViewHolder(@NonNull FirebaseRecipeViewHolder firebaseRecipeViewHolder, int position, @NonNull Hit recipe) {
         firebaseRecipeViewHolder.bindRecipe(recipe);
-        firebaseRecipeViewHolder.mRecipeImageView.setOnTouchListener(new View.OnTouchListener(){
-
-            @Override
-            public boolean onTouch(View v , MotionEvent event) {
-                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-                    mOnStartDragListener.onStartDrag(firebaseRecipeViewHolder);
-
-                }
-                return false;
-            }
-        });
+//        firebaseRecipeViewHolder.mRecipeImageView.setOnTouchListener(new View.OnTouchListener(){
+//
+////            @Override
+////            public boolean onTouch(View v , MotionEvent event) {
+////                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+////                    mOnStartDragListener.onStartDrag(firebaseRecipeViewHolder);
+////
+////                }
+////                return false;
+////            }
+//        });
     }
 
     @Override
@@ -50,13 +50,23 @@ public class FirebaseRecipeListAdapter extends FirebaseRecyclerAdapter<Hit,Fireb
         return new FirebaseRecipeViewHolder(view);
     }
 
+//    @Override
+//    public boolean onItemMove(int fromPosition, int toPosition) {
+//        return false;
+//    }
+//
+//    @Override
+//    public void onItemDismiss(int position) {
+//
+//    }
+
     @Override
-    public boolean onItemMove(int fromPosition, int toPosition) {
-        return false;
+    public void onItemSelected() {
+
     }
 
     @Override
-    public void onItemDismiss(int position) {
+    public void onItemClear() {
 
     }
 }
