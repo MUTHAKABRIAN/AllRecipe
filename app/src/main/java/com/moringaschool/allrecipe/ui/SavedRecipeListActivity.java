@@ -62,7 +62,7 @@ public class SavedRecipeListActivity extends AppCompatActivity {
             }
             @Override
             public FirebaseRecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from (parent.getContext()).inflate(R.layout.recipe_list_item_drag,parent,false);
+                View view = LayoutInflater.from (parent.getContext()).inflate(R.layout.recipe_list_item,parent,false);
                 return new FirebaseRecipeViewHolder(view);
 
             }

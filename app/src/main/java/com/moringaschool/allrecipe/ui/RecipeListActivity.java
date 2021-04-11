@@ -125,11 +125,11 @@ public class RecipeListActivity extends AppCompatActivity {
 
 
     private void showFailureMessage(){
-        mErrorTextView.setText("Something went Wrong.please check your internet connection and try again later");
+        mErrorTextView.setText(R.string.FailureMsg);
         mErrorTextView.setVisibility(View.VISIBLE);
     }
     private void showUnsuccessfulMessage(){
-        mErrorTextView.setText("Something went wrong .please try again later");
+        mErrorTextView.setText(R.string.UnsuccessfulMsg);
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
